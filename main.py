@@ -51,16 +51,17 @@ def headerortailer_check(guess : int, answer : int, attempts, correct):
 
 # main loop function
 def headerortailer_loop():
-    
     while (True):
         guess = validate_guess(input("Guess (h or t): "))
         ans = random.randint(0, len(CONFIG["options"]) - 1)
-        if (guess == -1):
+        if (guess == -1): # the validate_guess function returns an integer of the position of a choice within CONFIG["options"] 
             print("Invalid guess!")
             continue
         attempts += 1
         correct = headerortailer_check(guess, ans, attempts, correct)   # we supply "correct" and "attempts" because of value scope, with "attempts" being for printing
                                                                         # and "correct" so we can update it later
 
+
+#---------------main
 intro()
 headerortailer_loop()
