@@ -1,5 +1,14 @@
-import random
+import random # random library is used for generating the computers' answer
 
+"""
+ CONFIG
+  *  Main configuration for this script.
+
+    "options"
+      - what options the user can select, will also change the computers' options, making the game harder if increased in size
+    "namelen"
+      - what lengths of the users' name are acceptable
+"""
 CONFIG = {
     "options" : [
         "h",
