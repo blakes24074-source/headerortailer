@@ -76,7 +76,7 @@ def validate_guess(guess : str):
 @param {int} correct      =       how many times the user has guessed correctly
 """
 def headerortailer_printcorrect(succ : bool, attempts, correct):
-    if (succ): # was the guess right? we do seperate prints here to avoid repetition
+    if (succ): # was the guess right? we do seperate prints here to avoid repetition / weird nested behaviour
         print(f"Correct guess!", end="")
     else:
         print(f"Incorrect guess!", end="")
