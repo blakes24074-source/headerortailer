@@ -27,9 +27,9 @@ CONFIG = {
   *     - checking if the name is a vlaid length (customisable)
   *     - checking that the name does not contain any numbers
 
-  @param {str} name         =       the name that the user has supplied
+@param {str} name         =       the name that the user has supplied
 
-  @return {bool}            =       whether or not the name is valid
+@return {bool}            =       whether or not the name is valid
 """
 def validate_str(name : str):
     if (len(name) < CONFIG["namelen"]["min"] or len(name) > CONFIG["namelen"]["max"]): # check the length of the name, if it's outside of the valid range, return false
@@ -55,9 +55,9 @@ def intro():
  validate_guess
   *  Check if the guess supplied by the user was a valid guess, and return what that guess actually is within CONFIG["options"]
 
-  @param {str} guess        =       the input that the user has supplied
+@param {str} guess        =       the input that the user has supplied
 
-  @return {int}             =       what the guess of the user is, translated into the index of an option in CONFIG["options"]
+@return {int}             =       what the guess of the user is, translated into the index of an option in CONFIG["options"]
 """
 def validate_guess(guess : str):
     for i in range(len(CONFIG["options"])): # check each choice that you can use
@@ -71,9 +71,9 @@ def validate_guess(guess : str):
   *  Feedback to the user to whether or not they guessed wrong, and what their updated stats are.
   *  Prints out whether or not the user was correct, and what their stats (correct guesses, incorrect guesses, win rate) are.
 
-  @param {bool} succ        =       whether or not the user guessed the right answer
-  @param {int} attempts     =       how many times the user has attempted guessing
-  @param {int} correct      =       how many times the user has guessed correctly
+@param {bool} succ        =       whether or not the user guessed the right answer
+@param {int} attempts     =       how many times the user has attempted guessing
+@param {int} correct      =       how many times the user has guessed correctly
 """
 def headerortailer_printcorrect(succ : bool, attempts, correct):
     if (succ): # was the guess right? we do seperate prints here to avoid repetition
@@ -88,12 +88,12 @@ def headerortailer_printcorrect(succ : bool, attempts, correct):
   *  Validate whether or not the guess supplied by the user is valid
   *  Iterate through each option within CONFIG["options"]
 
-  @param {int} guess        =       the guess of the user
-  @param {int} answer       =       the correct answer that the computer has decided
-  @param {int} attempts     =       how many times the user has attempted guessing, passed to headerortailer_printcorrect for use within calculations
-  @param {int} correct      =       how many times the user has supplied a correct guess, incremented by 1 if correct, and passed to headerortailer_printcorrect for use within
+@param {int} guess        =       the guess of the user
+@param {int} answer       =       the correct answer that the computer has decided
+@param {int} attempts     =       how many times the user has attempted guessing, passed to headerortailer_printcorrect for use within calculations
+@param {int} correct      =       how many times the user has supplied a correct guess, incremented by 1 if correct, and passed to headerortailer_printcorrect for use within
                                         calculations
-  @return {int} correct     =       parameter "correct" but incremented by one if guess is correct
+@return {int} correct     =       parameter "correct" but incremented by one if guess is correct
 """
 def headerortailer_check(guess : int, answer : int, attempts, correct):
     if (guess == answer): # check if the guess is correct
