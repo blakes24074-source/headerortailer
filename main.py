@@ -36,6 +36,7 @@ def validate_str(name : str):
         return False
     return name.isalpha() # check if there are any numbers in the name, if there are, return false, else, return true
 
+
 """
  intro
   *  Main intro function, ask what the user's name is, and make sure it is actually a name
@@ -47,6 +48,7 @@ def intro():
             print("Welcome, "+name+"!")
             return
         print("Invalid name!")
+
     
 
 """
@@ -63,6 +65,7 @@ def validate_guess(guess : str):
             return i # return what choice the user made
     return -1 # otherwise, if no choice is found, the guess must be invalid, so return -1
 
+
 """
  headerortailer_printcorrect
   *  Feedback to the user to whether or not they guessed wrong, and what their updated stats are.
@@ -78,6 +81,7 @@ def headerortailer_printcorrect(succ : bool, attempts, correct):
     else:
         print(f"Incorrect guess!", end="")
     print(f" Correct: {correct}, Incorrect: {attempts - correct}, Win rate: {round(correct/attempts * 10000) / 100}%") # make the percentage to 2 d.p
+
 
 """
  headerortailer_check
@@ -96,6 +100,7 @@ def headerortailer_check(guess : int, answer : int, attempts, correct):
         correct += 1 # increment the correct tally if correct
     headerortailer_printcorrect(guess == answer, attempts, correct) # give feedback to the user, saying if the guess was correct and their updated stats
     return correct # update the main loop with the new correct
+
 
 """
  headerortailer_loop
