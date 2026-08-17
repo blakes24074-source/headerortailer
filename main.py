@@ -49,7 +49,6 @@ def intro():
             return
         print("Invalid name!")
 
-    
 
 """
  validate_guess
